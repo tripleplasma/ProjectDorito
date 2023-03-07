@@ -16,8 +16,11 @@ def send_message(msg):
 	'verizon':  '@vtext.com',
 	'sprint':   '@page.nextel.com'
     }
-    # Replace the number with your own, or consider using an argument\dict for multiple people.
+
     to_number = '{}{}'.format(os.environ["PHONE"],carriers['verizon'])
+    #The auth email and password I used are from setting up a google service that can send messages
+    #https://support.google.com/accounts/answer/185833?visit_id=638136011549548814-2332719711&p=InvalidSecondFactor&rd=1
+    #This link will get you the auth_password associated to the email you enabled it from
     auth = (os.environ["AUTH_EMAIL"], os.environ["AUTH_PASSWORD"])
 
 	# Establish a secure session with gmail's outgoing SMTP server using your gmail account
